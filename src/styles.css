@@ -32,6 +32,11 @@ p {
   font-size: 13px;
 }
 
+.open-source {
+  margin-top: 20px;
+  text-decoration: none;
+}
+
 .humidity {
   text-align: left;
 }
