@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/styles.css" />
+    <script
+      src="https://kit.fontawesome.com/ee0bafbaec.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row collective-weather">
+        <div class="col card main-weather">
+          <span class="button-temp-options">
+            <button class="btn btn-fahrenheit position-absolute end-0">
+              °F
+            </button></span
+          >
+          <div class="card-body current-weather">
+            <h1 class="currentCityName">City Name</h1>
+            <div id="circle"></div>
+            <h2 class="current-temp">19</h2>
+            <h2 id="tempAttribute">°C</h2>
+            <h3 class="descriptionWeather">Broken Clouds</h3>
+          </div>
+          <div class="additionalInfo row">
+            <div class="col row humidity-info">
+              <p class="col humidity" id="humidity-level">Humidity:</p>
+            </div>
+            <div class="col row windSpeed">
+              <p class="col wind" id="wind-speed">Wind:</p>
+            </div>
+          </div>
+          <div class="card forecast-hourly">
+            <div class="card-body hourly row">
+              <div class="col weather-now">
+                <div class="col circle-next-3"></div>
+                <p class="weather-forecast">weather now</p>
+              </div>
+              <div class="col weather-1">
+                <div class="col circle-next-3"></div>
+                <p class="weather-forecast">weather now</p>
+              </div>
+              <div class="col weather-2">
+                <div class="col circle-next-3"></div>
+                <p class="weather-forecast">weather now</p>
+              </div>
+              <div class="col weather-3">
+                <div class="col circle-next-3"></div>
+                <p class="weather-forecast">weather now</p>
+              </div>
+              <div class="col weather-4">
+                <div class="col circle-next-3"></div>
+                <p class="weather-forecast">weather now</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col container-right-area">
+          <div class="row dateTime">
+            <div class="col date" id="weekdays">Monday</div>
+            <div class="col time" id="time">12:30 pm</div>
+          </div>
+          <form class="col row search-area" id="search-form" autocomplete="off">
+            <input
+              class="form-control search-bar"
+              id="search"
+              type="text"
+              placeholder="Dream Destination"
+            />
+            <button type="submit" class="icon-search-button" id="search-button">
+              <i class="fas fa-search"></i>
+            </button>
+            <button
+              type="submit"
+              class="icon-location-button"
+              id="location-button"
+            >
+              <i class="fas fa-map-marker-alt"></i>
+            </button>
+          </form>
+          <div class="forecast-group">
+            <h6>Forecast</h6>
+            <div class="card forecast-1">
+              <div class="card-body row">
+                <div class="col circle-next-1"></div>
+                <p class="col forecast-next-date-1">Weekday</p>
+                <p class="col forecast-next-temp-1">Temp</p>
+              </div>
+            </div>
+            <div class="card forecast-2">
+              <div class="card-body row">
+                <div class="col circle-next-2"></div>
+                <p class="col forecast-next-date-2">Weekday</p>
+                <p class="col forecast-next-temp-2">temp</p>
+              </div>
+            </div>
+            <div class="card forecast-3">
+              <div class="card-body row">
+                <div class="col circle-next-3"></div>
+                <p class="col forecast-next-date-3">Weekday</p>
+                <p class="col forecast-next-temp-3">temp</p>
+              </div>
+            </div>
+            <div class="card forecast-4">
+              <div class="card-body row">
+                <div class="col circle-next-4"></div>
+                <p class="col forecast-next-date-4">Weekday</p>
+                <p class="col forecast-next-temp-4">temp</p>
+              </div>
+            </div>
+            <div class="card forecast-5">
+              <div class="card-body row">
+                <div class="col circle-next-5"></div>
+                <p class="col forecast-next-date-5">Weekday</p>
+                <p class="col forecast-next-temp-5">temp</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="src/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,223 @@
+body {
+  margin: 20px;
+}
+
+h1 {
+  margin-top: 30px;
+  margin-bottom: 25px;
+  font-family: "Bebas Neue", "Arial", cursive;
+  font-weight: 400;
+  letter-spacing: 2px;
+  font-size: 21px;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+h2 {
+  text-align: center;
+  padding-bottom: 10px;
+  font-family: "Gilroy", "Arial";
+  font-size: 40px;
+  font-weight: lighter;
+  display: inline;
+}
+
+h3 {
+  font-size: 14px;
+  margin-top: 20px;
+  text-transform: capitalize;
+}
+
+p {
+  font-size: 13px;
+}
+
+.humidity {
+  text-align: left;
+}
+
+.windSpeed {
+  text-align: right;
+}
+
+.collective-weather {
+  display: flex;
+  justify-content: center;
+}
+
+.main-weather {
+  margin: 30px 0px 0 0;
+  width: 600px;
+  max-width: 700px;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.container-right-area {
+  padding: 0 20px;
+  max-width: 500px;
+  width: 400px;
+}
+
+.forecast-1 {
+  border-radius: 10px 10px 0 0;
+}
+
+.forecast-5 {
+  border-radius: 0 0 10px 10px;
+}
+
+.forecast-2,
+.forecast-3,
+.forecast-4 {
+  border-radius: 0;
+}
+
+.date {
+  margin-top: 30px;
+  text-align: left;
+}
+
+.time {
+  margin-top: 30px;
+  text-align: right;
+}
+
+.row.search-area {
+  width: 100%;
+  padding: 0;
+  width: 100%;
+  margin: 10px 0 20px 0;
+}
+
+.search-bar {
+  width: 60%;
+  height: 40px;
+  border: solid 1px black;
+  border-radius: 10px 0px 0px 10px;
+  padding: 10px;
+}
+
+.icon-search-button {
+  width: 20%;
+  height: 40px;
+  border: 1px solid black;
+  background: black;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.icon-location-button {
+  width: 15%;
+  height: 40px;
+  margin-left: 5%;
+  border: 1px solid black;
+  background: black;
+  text-align: center;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.btn-fahrenheit {
+  border-radius: 0 10px 0 10px;
+  padding: 0px;
+  width: 50px;
+  height: 40px;
+  font-weight: 300;
+  font-family: "gilroy", "Arial";
+  font-size: 14px;
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.btn-fahrenheit:hover {
+  width: 76px;
+  transition: 79ms ease-in-out;
+  text-decoration: none;
+  color: white;
+}
+
+#circle {
+  display: block;
+  margin: 0 auto;
+  margin-top: 0px;
+  margin-bottom: 30px;
+  background: lightblue;
+  border-radius: 50%;
+  width: 13vw;
+  height: 13vw;
+}
+
+.forecast-hourly {
+  border-right-style: none;
+  border-left-style: none;
+  border-bottom-style: none;
+  border-radius: 0;
+}
+
+.current-weather {
+  margin-bottom: 10px;
+}
+
+.weather-now,
+.weather-1,
+.weather-2,
+.weather-3,
+.weather-4 {
+  padding: 30px 10px 0;
+}
+
+.circle-next-1,
+.circle-next-2,
+.circle-next-3,
+.circle-next-4,
+.circle-next-5 {
+  margin: 0 auto;
+  background: lightblue;
+  border-radius: 50%;
+  width: 4vw;
+  height: 4vw;
+  flex: initial;
+  align-items: center;
+}
+
+.forecast-next-temp-1,
+.forecast-next-temp-2,
+.forecast-next-temp-3,
+.forecast-next-temp-4,
+.forecast-next-temp-5,
+.forecast-next-date-1,
+.forecast-next-date-2,
+.forecast-next-date-3,
+.forecast-next-date-4,
+.forecast-next-date-5 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.card-body.row {
+  margin: 0;
+  padding: 15px;
+}
+
+.weather-forecast {
+  padding: 10px 5px;
+  margin-bottom: 0;
+}
+
+.hourly.row {
+  padding: 0;
+}
