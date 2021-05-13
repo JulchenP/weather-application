@@ -139,6 +139,12 @@ function defaultDisplayWeather(response) {
   tempElement.innerHTML = Math.round(response.data.main.temp);
   let descriptionElement = document.querySelector(".descriptionWeather");
   descriptionElement.innerHTML = response.data.weather[0].description;
+  let humidityElement = document.querySelector("#humidity-level");
+  let windElement = document.querySelector("#wind-speed");
+  let humidity = response.data.main.humidity;
+  let wind = Math.round(response.data.wind.speed);
+  humidityElement.innerHTML = `Humidity: ${humidity} %`;
+  windElement.innerHTML = `Wind: ${wind} km/h`;
 }
 let apiKey = "8f6580a23970831fa98d32233fed28c8";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Muenster&appid=${apiKey}&units=metric`;
