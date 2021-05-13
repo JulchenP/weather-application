@@ -129,3 +129,17 @@ function getCurrentPosition() {
 
 let locationButton = document.querySelector("#location-button");
 locationButton.addEventListener("click", getCurrentPosition);
+
+// DEFAULT WEATHER
+
+function defaultDisplayWeather(response) {
+  let cityElement = document.querySelector(".currentCityName");
+  cityElement.innerHTML = response.data.name;
+  let tempElement = document.querySelector(".current-temp");
+  tempElement.innerHTML = Math.round(response.data.main.temp);
+  let descriptionElement = document.querySelector(".descriptionWeather");
+  descriptionElement.innerHTML = response.data.weather[0].description;
+}
+let apiKey = "8f6580a23970831fa98d32233fed28c8";
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Muenster&appid=${apiKey}&units=metric`;
+axios.get(apiUrl).then(defaultDisplayWeather);
