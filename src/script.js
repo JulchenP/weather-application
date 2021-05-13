@@ -78,6 +78,16 @@ function showWeather(response) {
   let humidity = response.data.main.humidity;
   let wind = Math.round(response.data.wind.speed);
 
+  let currentWeatherIconElement = document.querySelector("#currentWeatherIcon");
+  currentWeatherIconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  currentWeatherIconElement.setAttribute(
+    "alt",
+    response.data.weather[0].description
+  );
+
   cityElement.innerHTML = city;
   tempElement.innerHTML = temperature;
   descriptionElement.innerHTML = description;
@@ -85,16 +95,22 @@ function showWeather(response) {
   windElement.innerHTML = `Wind: ${wind} km/h`;
 }
 
-function searchingCity(event) {
-  event.preventDefault();
-  let city = document.querySelector("#search").value;
+function searchingCity(city) {
   let apiKey = "8f6580a23970831fa98d32233fed28c8";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showWeather);
 }
 
+searchingCity("Münster");
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#search");
+  searchingCity(cityInputElement.value);
+}
+
 let searchForm = document.querySelector("#search-form");
-searchForm.addEventListener("click", searchingCity);
+searchForm.addEventListener("click", handleSubmit);
 
 // CURRENT LOCATION BUTTON (API)
 
@@ -129,32 +145,3 @@ function getCurrentPosition() {
 
 let locationButton = document.querySelector("#location-button");
 locationButton.addEventListener("click", getCurrentPosition);
-
-// DEFAULT WEATHER
-
-function defaultDisplayWeather(response) {
-  let cityElement = document.querySelector(".currentCityName");
-  cityElement.innerHTML = response.data.name;
-  let tempElement = document.querySelector(".current-temp");
-  tempElement.innerHTML = Math.round(response.data.main.temp);
-  let descriptionElement = document.querySelector(".descriptionWeather");
-  descriptionElement.innerHTML = response.data.weather[0].description;
-  let humidityElement = document.querySelector("#humidity-level");
-  let windElement = document.querySelector("#wind-speed");
-  let humidity = response.data.main.humidity;
-  let wind = Math.round(response.data.wind.speed);
-  humidityElement.innerHTML = `Humidity: ${humidity} %`;
-  windElement.innerHTML = `Wind: ${wind} km/h`;
-  let currentWeatherIconElement = document.querySelector("#currentWeatherIcon");
-  currentWeatherIconElement.setAttribute(
-    "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-  );
-  currentWeatherIconElement.setAttribute(
-    "alt",
-    response.data.weather[0].description
-  );
-}
-let apiKey = "8f6580a23970831fa98d32233fed28c8";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Muenster&appid=${apiKey}&units=metric`;
-axios.get(apiUrl).then(defaultDisplayWeather);
