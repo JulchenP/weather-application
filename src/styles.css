@@ -117,9 +117,8 @@ p {
 }
 
 .icon-location-button {
-  width: 15%;
+  width: 17%;
   height: 40px;
-  margin-left: 5%;
   border: 1px solid black;
   background: black;
   text-align: center;
@@ -127,6 +126,10 @@ p {
   border-radius: 5px;
   cursor: pointer;
   font-size: 20px;
+}
+
+#location-button {
+  margin-left: 2px;
 }
 
 .btn-fahrenheit {
