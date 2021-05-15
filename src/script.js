@@ -137,7 +137,7 @@ function convertToC() {
 
 function convertsUnityButton(event) {
   event.preventDefault;
-  if (fahrenheitLink.innerHTML === "°F") {
+  if (fahrenheitLink.innerHTML === "°C") {
     convertToC();
   } else {
     convertToF();
