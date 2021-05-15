@@ -3,7 +3,7 @@ body {
 }
 
 h1 {
-  margin-top: 30px;
+  margin-top: 20%;
   font-family: "Bebas Neue", "Arial", cursive;
   font-weight: 400;
   letter-spacing: 2px;
@@ -25,10 +25,16 @@ h3 {
   font-size: 14px;
   margin-top: 20px;
   text-transform: capitalize;
+  margin-bottom: 15%;
 }
 
 p {
   font-size: 13px;
+}
+
+hr {
+  color: grey;
+  margin: 0;
 }
 
 .open-source {
@@ -53,6 +59,7 @@ p {
   margin: 30px 0px 0 0;
   width: 600px;
   max-width: 700px;
+  max-height: 650px;
   padding: 10px;
   border-radius: 10px;
   text-align: center;
@@ -156,9 +163,7 @@ p {
 
 #circle {
   display: block;
-  margin: 0 auto;
-  margin-top: 0px;
-  margin-bottom: 30px;
+
   background: lightblue;
   border-radius: 50%;
   width: 13vw;
@@ -170,16 +175,6 @@ p {
   border-left-style: none;
   border-bottom-style: none;
   border-radius: 0;
-}
-
-.current-weather {
-  margin-bottom: 10px;
-}
-
-#currentWeatherIcon {
-  width: 120px;
-  height: 120px;
-  margin: 20px;
 }
 
 .weather-now,
@@ -214,9 +209,6 @@ p {
 .forecast-next-date-3,
 .forecast-next-date-4,
 .forecast-next-date-5 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   text-align: center;
   margin-bottom: 0;
 }
