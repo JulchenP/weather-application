@@ -176,6 +176,12 @@ p {
   margin-bottom: 10px;
 }
 
+#currentWeatherIcon {
+  width: 120px;
+  height: 120px;
+  margin: 20px;
+}
+
 .weather-now,
 .weather-1,
 .weather-2,
