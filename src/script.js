@@ -31,38 +31,6 @@ time.innerHTML = `${hours}:${minutes}`;
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", search);
 
-// TEMP TOGGLE BUTTON
-
-let tempSymbol = document.querySelector("#tempAttribute");
-
-function convertToF(event) {
-  event.preventDefault();
-  let temperature = document.querySelector(".current-temp");
-  temperature = Number(temperature);
-  if (fahrenheitLink.innerHTML === "°F") {
-    temperature.innerHTML = Math.round((temperature * 9) / 5 + 32);
-    fahrenheitLink.innerHTML = "°C";
-    tempSymbol.innerHTML = "°F";
-  } else {
-    temperature.innerHTML = temperature;
-    fahrenheitLink.innerHTML = "°F";
-    tempSymbol.innerHTML = "°C";
-  }
-}
-
-function convertToC(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector(".current-temp");
-  let temperature = document.querySelector(".current-temp");
-  temperatureElement.innerHTML = temperature;
-}
-
-let fahrenheitLink = document.querySelector(".btn-fahrenheit");
-fahrenheitLink.addEventListener("click", convertToF);
-
-let celciusLink = document.querySelector(".btn-fahrenheit");
-celciusLink.addEventListener("click", convertToC);
-
 // SEARCH BAR (API)
 
 function showWeather(response) {
@@ -72,7 +40,7 @@ function showWeather(response) {
   let humidityElement = document.querySelector("#humidity-level");
   let windElement = document.querySelector("#wind-speed");
 
-  let temperature = Math.round(response.data.main.temp);
+  let celciusTemp = Math.round(response.data.main.temp);
   let city = response.data.name;
   let description = response.data.weather[0].description;
   let humidity = response.data.main.humidity;
@@ -89,7 +57,7 @@ function showWeather(response) {
   );
 
   cityElement.innerHTML = city;
-  tempElement.innerHTML = temperature;
+  tempElement.innerHTML = celciusTemp;
   descriptionElement.innerHTML = description;
   humidityElement.innerHTML = `Humidity: ${humidity} %`;
   windElement.innerHTML = `Wind: ${wind} km/h`;
@@ -118,14 +86,16 @@ function displayWeather(response) {
   let searchedCity = document.querySelector("h1");
   let descriptionCondition = document.querySelector(".descriptionWeather");
   let temperatureElement = document.querySelector("h2");
-  let temperature = Math.round(response.data.main.temp);
+
+  celciusTemp = Math.round(response.data.main.temp);
+
   let humidityElement = document.querySelector("#humidity-level");
   let windElement = document.querySelector("#wind-speed");
   let humidity = response.data.main.humidity;
   let wind = Math.round(response.data.wind.speed);
 
   searchedCity.innerHTML = response.data.name;
-  temperatureElement.innerHTML = `${temperature}`;
+  temperatureElement.innerHTML = `${celciusTemp}`;
   descriptionCondition.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = `Humidity: ${humidity} %`;
   windElement.innerHTML = `Wind: ${wind} km/h`;
@@ -145,3 +115,42 @@ function getCurrentPosition() {
 
 let locationButton = document.querySelector("#location-button");
 locationButton.addEventListener("click", getCurrentPosition);
+
+// TEMP TOGGLE BUTTON
+
+function convertToF() {
+  fahrenheitTemp = (celciusTemp * 9) / 5 + 32;
+  let temperatureElement = document.querySelector(".current-temp");
+  temperatureElement.innerHTML = `${Math.round(fahrenheitTemp)}`;
+
+  fahrenheitLink.innerHTML = "°C";
+  tempSymbol.innerHTML = "°F";
+}
+
+function convertToC() {
+  let temperatureElement = document.querySelector(".current-temp");
+  temperatureElement.innerHTML = `${celciusTemp}`;
+
+  fahrenheitLink.innerHTML = "°F";
+  tempSymbol.innerHTML = "°C";
+}
+
+function convertsUnityButton(event) {
+  event.preventDefault;
+  if (fahrenheitLink.innerHTML === "°F") {
+    convertToC();
+  } else {
+    convertToF();
+  }
+}
+
+let tempSymbol = document.querySelector("#tempAttribute");
+
+let fahrenheitLink = document.querySelector(".btn-fahrenheit");
+fahrenheitLink.addEventListener("click", convertsUnityButton);
+
+let celciusLink = document.querySelector(".btn-fahrenheit");
+celciusLink.addEventListener("click", convertsUnityButton);
+
+let celciusTemp = null;
+let fahrenheitTemp = null;
