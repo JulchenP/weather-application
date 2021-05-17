@@ -3,7 +3,7 @@ body {
 }
 
 h1 {
-  margin-top: 20%;
+  margin-top: 65px;
   font-family: "Bebas Neue", "Arial", cursive;
   font-weight: 400;
   letter-spacing: 2px;
@@ -25,7 +25,7 @@ h3 {
   font-size: 14px;
   margin-top: 20px;
   text-transform: capitalize;
-  margin-bottom: 15%;
+  margin-bottom: 55px;
 }
 
 p {
@@ -69,7 +69,7 @@ a:hover {
   width: 600px;
   max-width: 700px;
   max-height: 650px;
-  padding: 10px;
+  padding: 20px;
   border-radius: 10px;
   text-align: center;
 }
@@ -93,7 +93,6 @@ a:hover {
 .row.search-area {
   width: 100%;
   padding: 0;
-  width: 100%;
   margin: 10px 0 20px 0;
 }
 
@@ -130,7 +129,7 @@ a:hover {
 }
 
 #location-button {
-  margin-left: 2px;
+  margin-left: 10px;
 }
 
 .btn-fahrenheit {
@@ -170,6 +169,7 @@ a:hover {
   border-left-style: none;
   border-bottom-style: none;
   border-radius: 0;
+  padding: 0;
 }
 
 .weather-now,
@@ -241,8 +241,4 @@ a:hover {
 .weather-forecast {
   padding: 10px 5px;
   margin-bottom: 0;
-}
-
-.hourly.row {
-  padding: 0;
 }

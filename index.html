@@ -19,9 +19,9 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
   <body>
-    <div class="container">
+    <div class="container card-deck">
       <div class="row collective-weather">
-        <div class="col card main-weather">
+        <div class="col card main-weather .h-100">
           <span class="button-temp-options">
             <button class="btn btn-fahrenheit position-absolute end-0">
               °F
@@ -44,42 +44,42 @@
               <p class="col wind" id="wind-speed">Wind:</p>
             </div>
           </div>
-          <div class="card forecast-hourly">
-            <div class="card-body hourly row">
-              <div class="col weather-now">
-                <div class="col circle-next-0"></div>
-                <p class="weather-forecast">weather now</p>
-              </div>
-              <div class="col weather-1">
-                <div class="col circle-next-0"></div>
-                <p class="weather-forecast">weather now</p>
-              </div>
-              <div class="col weather-2">
-                <div class="col circle-next-0"></div>
-                <p class="weather-forecast">weather now</p>
-              </div>
-              <div class="col weather-3">
-                <div class="col circle-next-0"></div>
-                <p class="weather-forecast">weather now</p>
-              </div>
-              <div class="col weather-4">
-                <div class="col circle-next-0"></div>
-                <p class="weather-forecast">weather now</p>
-              </div>
+          <hr />
+          <div class="row forecast-hourly">
+            <div class="col weather-now">
+              <div class="col circle-next-0"></div>
+              <p class="weather-forecast">weather now</p>
+            </div>
+            <div class="col weather-1">
+              <div class="col circle-next-0"></div>
+              <p class="weather-forecast">weather now</p>
+            </div>
+            <div class="col weather-2">
+              <div class="col circle-next-0"></div>
+              <p class="weather-forecast">weather now</p>
+            </div>
+            <div class="col weather-3">
+              <div class="col circle-next-0"></div>
+              <p class="weather-forecast">weather now</p>
+            </div>
+            <div class="col weather-4">
+              <div class="col circle-next-0"></div>
+              <p class="weather-forecast">weather now</p>
             </div>
           </div>
         </div>
-        <div class="col container-right-area">
+
+        <div class="container-right-area">
           <div class="row dateTime">
             <div class="col date" id="weekdays">Monday</div>
             <div class="col time" id="time">12:30 pm</div>
           </div>
-          <form class="col row search-area" id="search-form" autocomplete="off">
+          <form class="row search-area" id="search-form" autocomplete="off">
             <input
               class="form-control search-bar"
               id="search"
               type="text"
-              placeholder="Dream Destination"
+              placeholder="Search City"
               autocomplete="off"
             />
             <button type="submit" class="icon-search-button" id="search-button">
