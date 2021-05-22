@@ -31,6 +31,13 @@ time.innerHTML = `${hours}:${minutes}`;
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", search);
 
+// Forecast
+
+function getForecast(coordinates) {
+  let apiKey = "8f6580a23970831fa98d32233fed28c8";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+}
+
 // SEARCH BAR (API)
 
 function showWeather(response) {
@@ -61,6 +68,8 @@ function showWeather(response) {
   descriptionElement.innerHTML = description;
   humidityElement.innerHTML = `Humidity: ${humidity} %`;
   windElement.innerHTML = `Wind: ${wind} km/h`;
+
+  getForecast(response.data.coord);
 }
 
 function searchingCity(city) {
