@@ -36,6 +36,26 @@ form.addEventListener("submit", search);
 function getForecast(coordinates) {
   let apiKey = "8f6580a23970831fa98d32233fed28c8";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showForecast);
+}
+
+function showForecast() {
+  let forecastElement = document.querySelector("#forecastWeek");
+  let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
+  let forecastHTML = `<div class="row forecast-row">`;
+  days.forecastElement(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+
+                  <div class="col-4 circle-next-1"></div>
+                  <p class="col-4 forecast-next-date-1">Weekday</p>
+                  <p class="col-4 forecast-next-temp-1">Temp | Temp</p>
+                  < /hr>
+                </div>`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
 }
 
 // SEARCH BAR (API)
