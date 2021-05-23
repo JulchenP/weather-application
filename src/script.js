@@ -43,15 +43,15 @@ function showForecast() {
   let forecastElement = document.querySelector("#forecastWeek");
   let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
   let forecastHTML = `<div class="row forecast-row">`;
-  days.forecastElement(function (day) {
+  days.forEach(function (day) {
     forecastHTML =
       forecastHTML +
       `
                   <div class="col-4 circle-next-1"></div>
                   <p class="col-4 forecast-next-date-1">${day}</p>
                   <p class="col-4 forecast-next-temp-1">Temp | Temp</p>
-                  < /hr>
-                </div>`;
+           <span> <hr> </span>
+                `;
   });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
