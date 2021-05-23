@@ -55,12 +55,12 @@ function showHourlyForecast(response) {
   let forecastHTML = `<div class="row forecast-hourly">
 `;
   forecast.forEach(function (forecastHour, index) {
-    if (index < 3) {
+    if (index < 6) {
       forecastHTML =
         forecastHTML +
         `
         <div class="hourly col">
-         <img class="image "
+         <img class="image"
           src="http://openweathermap.org/img/wn/${
             forecastHour.weather[0].icon
           }@2x.png"
@@ -112,8 +112,8 @@ function showDailyForecast(response) {
       forecastHTML =
         forecastHTML +
         `
-        <div class="col-4">
-         <img
+        <div class="col-4 image-icon">
+         <img class="image"
           src="http://openweathermap.org/img/wn/${
             forecastDay.weather[0].icon
           }@2x.png"
