@@ -47,9 +47,8 @@ function showForecast() {
     forecastHTML =
       forecastHTML +
       `
-
                   <div class="col-4 circle-next-1"></div>
-                  <p class="col-4 forecast-next-date-1">Weekday</p>
+                  <p class="col-4 forecast-next-date-1">${day}</p>
                   <p class="col-4 forecast-next-temp-1">Temp | Temp</p>
                   < /hr>
                 </div>`;
