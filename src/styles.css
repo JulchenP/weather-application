@@ -43,7 +43,8 @@ a {
 }
 
 a:hover {
-  color: blue;
+  color: #ec6e4b;
+  transition: 50ms ease-in-out;
 }
 
 .image {
@@ -70,11 +71,9 @@ img.col-4 {
   margin-bottom: 0;
 }
 
-.windSpeed {
-  text-align: right;
-  margin-bottom: 0;
-}
+.windSpeed,
 #wind-speed {
+  text-align: right;
   margin-bottom: 0;
 }
 
@@ -91,7 +90,6 @@ img.col-4 {
   padding: 20px;
   border-radius: 10px;
   border: solid 1px black;
-
   text-align: center;
 }
 
@@ -141,6 +139,13 @@ img.col-4 {
   font-size: 20px;
 }
 
+.icon-search-button:hover,
+.icon-location-button:hover {
+  background-color: #ec6e4b;
+  border: 1px solid #ec6e4b;
+  transition: 50ms ease-in-out;
+}
+
 .icon-location-button {
   width: 17%;
   height: 40px;
@@ -175,9 +180,10 @@ img.col-4 {
 
 .btn-fahrenheit:hover {
   width: 76px;
-  transition: 79ms ease-in-out;
+  transition: 50ms ease-in-out;
   text-decoration: none;
   color: white;
+  background-color: #ec6e4b;
 }
 
 .weather-now,

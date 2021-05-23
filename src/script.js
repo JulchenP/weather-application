@@ -102,7 +102,6 @@ function formatForecastDay(timestamp) {
 }
 
 function showDailyForecast(response) {
-  console.log(response.data.hourly);
   let forecastElement = document.querySelector("#forecastWeek");
 
   let forecast = response.data.daily;
