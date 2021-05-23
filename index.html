@@ -45,28 +45,7 @@
             </div>
           </div>
           <hr />
-          <div class="row forecast-hourly">
-            <div class="col weather-now">
-              <div class="col circle-next-0"></div>
-              <p class="weather-forecast">weather now</p>
-            </div>
-            <div class="col weather-1">
-              <div class="col circle-next-0"></div>
-              <p class="weather-forecast">weather now</p>
-            </div>
-            <div class="col weather-2">
-              <div class="col circle-next-0"></div>
-              <p class="weather-forecast">weather now</p>
-            </div>
-            <div class="col weather-3">
-              <div class="col circle-next-0"></div>
-              <p class="weather-forecast">weather now</p>
-            </div>
-            <div class="col weather-4">
-              <div class="col circle-next-0"></div>
-              <p class="weather-forecast">weather now</p>
-            </div>
-          </div>
+          <div class="" id="forecastHourly"></div>
         </div>
 
         <div class="container-right-area">
@@ -94,7 +73,12 @@
             </button>
           </form>
           <div class="forecast-group">
-            <h6>Forecast</h6>
+            <div class="row">
+              <h6 class="col">Forecast</h6>
+              <p class="col" style="text-align: right">
+                (displayed in Celsius only)
+              </p>
+            </div>
             <div class="card forecast">
               <div class="card-body forecast-body" id="forecastWeek">
                 <div class="row forecast-row"></div>

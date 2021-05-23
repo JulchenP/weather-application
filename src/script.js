@@ -31,13 +31,61 @@ time.innerHTML = `${hours}:${minutes}`;
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", search);
 
-// Forecast
-
+// Forecast Hourly
 function getForecast(coordinates) {
   let apiKey = "8f6580a23970831fa98d32233fed28c8";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showDailyForecast);
+  axios.get(apiUrl).then(showHourlyForecast);
 }
+
+function formatForecastHour(timestamp) {
+  let time = new Date(timestamp);
+  return time.toLocaleTimeString("en-GB", {
+    hour12: false,
+    hour: "2-digit",
+    minute: "2-digit",
+  });
+}
+
+function showHourlyForecast(response) {
+  let forecastElement = document.querySelector("#forecastHourly");
+  let forecast = response.data.hourly;
+
+  let forecastHTML = `<div class="row forecast-hourly">
+`;
+  forecast.forEach(function (forecastHour, index) {
+    if (index < 4) {
+      forecastHTML =
+        forecastHTML +
+        `
+        <div class="hourly col">
+         <img class="image "
+          src="http://openweathermap.org/img/wn/${
+            forecastHour.weather[0].icon
+          }@2x.png"
+          alt=""
+          width="70%"
+          height="50%"
+        />
+              <div class="col weather-now">
+                <p class="weather-forecast">${Math.round(
+                  forecastHour.temp
+                )}°</p>
+                <p class="weather-forecast">${formatForecastHour(
+                  forecastHour.dt * 1000
+                )}
+               </p>
+              </div>
+              </div>
+                `;
+    }
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+// Forecast Daily
 
 function formatForecastDay(timestamp) {
   let date = new Date(timestamp * 1000);
@@ -55,6 +103,7 @@ function formatForecastDay(timestamp) {
 }
 
 function showDailyForecast(response) {
+  console.log(response.data.hourly);
   let forecastElement = document.querySelector("#forecastWeek");
 
   let forecast = response.data.daily;
@@ -70,7 +119,7 @@ function showDailyForecast(response) {
             forecastDay.weather[0].icon
           }@2x.png"
           alt=""
-          width="680%"
+          width="60%"
           height="60%"
         />
                   <p class="col-4 forecast-next-date-1">${formatForecastDay(
