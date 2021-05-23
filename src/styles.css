@@ -32,11 +32,6 @@ p {
   font-size: 13px;
 }
 
-hr {
-  color: grey;
-  margin: 0;
-}
-
 a {
   text-decoration: none;
   color: grey;
@@ -71,6 +66,8 @@ a:hover {
   max-height: 650px;
   padding: 20px;
   border-radius: 10px;
+  border: solid 1px black;
+
   text-align: center;
 }
 
@@ -133,7 +130,7 @@ a:hover {
 }
 
 .btn-fahrenheit {
-  border-radius: 0 10px 0 10px;
+  border-radius: 0 8px 0 10px;
   padding: 0px;
   width: 50px;
   height: 40px;
@@ -155,56 +152,12 @@ a:hover {
   color: white;
 }
 
-#circle {
-  display: block;
-
-  background: lightblue;
-  border-radius: 50%;
-  width: 13vw;
-  height: 13vw;
-}
-
-.forecast-hourly {
-  border-right-style: none;
-  border-left-style: none;
-  border-bottom-style: none;
-  border-radius: 0;
-  padding: 0;
-}
-
 .weather-now,
 .weather-1,
 .weather-2,
 .weather-3,
 .weather-4 {
   padding: 0px 10px 0;
-}
-
-.circle-next-0 {
-  margin: 0 auto;
-  background: lightblue;
-  border-radius: 50%;
-  width: 2.5vw;
-  height: 2.5vw;
-  flex: initial;
-  align-items: center;
-  padding: 5px;
-}
-
-.circle-next-1,
-.circle-next-2,
-.circle-next-3,
-.circle-next-4,
-.circle-next-5 {
-  margin: 0 auto;
-  margin-top: 17px;
-  background: lightblue;
-  border-radius: 50%;
-  width: 3vw;
-  height: 3vw;
-  flex: initial;
-  align-items: center;
-  padding: 5px;
 }
 
 .forecast-next-temp-1,
@@ -236,6 +189,7 @@ a:hover {
 
 .card.forecast {
   border-radius: 10px;
+  border: solid 1px black;
 }
 
 .weather-forecast {

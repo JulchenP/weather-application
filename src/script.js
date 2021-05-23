@@ -128,7 +128,7 @@ function showDailyForecast(response) {
                   <p class="col-4 forecast-next-temp-1">${Math.round(
                     forecastDay.temp.max
                   )}° | ${Math.round(forecastDay.temp.min)}°</p>
-           <span> <hr> </span>
+           
                 `;
     }
   });
