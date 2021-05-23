@@ -55,7 +55,7 @@ function showHourlyForecast(response) {
   let forecastHTML = `<div class="row forecast-hourly">
 `;
   forecast.forEach(function (forecastHour, index) {
-    if (index < 4) {
+    if (index < 3) {
       forecastHTML =
         forecastHTML +
         `
