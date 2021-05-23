@@ -36,23 +36,54 @@ form.addEventListener("submit", search);
 function getForecast(coordinates) {
   let apiKey = "8f6580a23970831fa98d32233fed28c8";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(showForecast);
+  axios.get(apiUrl).then(showDailyForecast);
 }
 
-function showForecast() {
+function formatForecastDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  return days[day];
+}
+
+function showDailyForecast(response) {
   let forecastElement = document.querySelector("#forecastWeek");
-  let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
+
+  let forecast = response.data.daily;
+
   let forecastHTML = `<div class="row forecast-row">`;
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
-                  <div class="col-4 circle-next-1"></div>
-                  <p class="col-4 forecast-next-date-1">${day}</p>
-                  <p class="col-4 forecast-next-temp-1">Temp | Temp</p>
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `
+         <img class="col-4"
+          src="http://openweathermap.org/img/wn/${
+            forecastDay.weather[0].icon
+          }@2x.png"
+          alt=""
+          width="680%"
+          height="60%"
+        />
+                  <p class="col-4 forecast-next-date-1">${formatForecastDay(
+                    forecastDay.dt
+                  )}</p>
+                  <p class="col-4 forecast-next-temp-1">${Math.round(
+                    forecastDay.temp.max
+                  )}° | ${Math.round(forecastDay.temp.min)}°</p>
            <span> <hr> </span>
                 `;
+    }
   });
+
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
