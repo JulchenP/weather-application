@@ -201,7 +201,7 @@ img.col-4 {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 25px;
+  padding: 0 25px;
 }
 
 .tempMax {

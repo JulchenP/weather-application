@@ -113,7 +113,7 @@ function showDailyForecast(response) {
         forecastHTML +
         `
         <div class="col-4 image-icon">
-         <img class="image"
+         <img 
           src="http://openweathermap.org/img/wn/${
             forecastDay.weather[0].icon
           }@2x.png"
