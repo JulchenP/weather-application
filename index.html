@@ -12,6 +12,12 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="src/styles.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;800&display=swap"
+      rel="stylesheet"
+    />
     <script
       src="https://kit.fontawesome.com/ee0bafbaec.js"
       crossorigin="anonymous"
@@ -21,7 +27,7 @@
   <body>
     <div class="container card-deck">
       <div class="row collective-weather">
-        <div class="col card main-weather .h-100">
+        <div class="col card main-weather">
           <span class="button-temp-options">
             <button class="btn btn-fahrenheit position-absolute end-0">
               °F
@@ -30,7 +36,7 @@
           <div class="card-body current-weather">
             <h1 class="currentCityName"></h1>
             <div>
-              <img id="currentWeatherIcon" src="" alt="sunny" />
+              <img id="currentWeatherIcon" src="" alt="" />
             </div>
             <h2 class="current-temp"></h2>
             <h2 id="tempAttribute">°C</h2>
@@ -47,17 +53,24 @@
           <p
             style="
               border-bottom: 1px solid black;
-              padding-bottom: 20px;
-              margin-bottom: 20px;
+              margin-top: 15px;
+              margin-bottom: 15px;
             "
           ></p>
+          <div class="row">
+            <h6 class="col" style="text-align: left">Forecast Hourly</h6>
+            <p class="col small" style="text-align: right">
+              (displayed in Celsius only)
+            </p>
+          </div>
+
           <div class="" id="forecastHourly"></div>
         </div>
 
         <div class="container-right-area">
           <div class="row dateTime">
-            <div class="col date" id="weekdays">Monday</div>
-            <div class="col time" id="time">12:30 pm</div>
+            <div class="col date" id="weekdays"></div>
+            <div class="col time" id="time"></div>
           </div>
           <form class="row search-area" id="search-form" autocomplete="off">
             <input
@@ -80,8 +93,8 @@
           </form>
           <div class="forecast-group">
             <div class="row">
-              <h6 class="col">Forecast</h6>
-              <p class="col" style="text-align: right">
+              <h6 class="col">Forecast Daily</h6>
+              <p class="col small" style="text-align: right">
                 (displayed in Celsius only)
               </p>
             </div>

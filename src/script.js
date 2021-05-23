@@ -65,14 +65,13 @@ function showHourlyForecast(response) {
             forecastHour.weather[0].icon
           }@2x.png"
           alt=""
-          width="70%"
-          height="50%"
+          
         />
               <div class="col weather-now">
-                <p class="weather-forecast">${Math.round(
+                <p class="weatherForecastTemp">${Math.round(
                   forecastHour.temp
                 )}°</p>
-                <p class="weather-forecast">${formatForecastHour(
+                <p class="weatherForecastTime">${formatForecastHour(
                   forecastHour.dt * 1000
                 )}
                </p>
@@ -114,20 +113,24 @@ function showDailyForecast(response) {
       forecastHTML =
         forecastHTML +
         `
-         <img class="col-4"
+        <div class="col-4">
+         <img
           src="http://openweathermap.org/img/wn/${
             forecastDay.weather[0].icon
           }@2x.png"
           alt=""
-          width="60%"
-          height="60%"
+         
         />
-                  <p class="col-4 forecast-next-date-1">${formatForecastDay(
+        </div>
+                  <p class="col-4 forecast-next-date">${formatForecastDay(
                     forecastDay.dt
                   )}</p>
-                  <p class="col-4 forecast-next-temp-1">${Math.round(
-                    forecastDay.temp.max
-                  )}° | ${Math.round(forecastDay.temp.min)}°</p>
+                  
+                  <div class="col-4 forecast-next-temp" >
+                  <p class="tempMax">${Math.round(forecastDay.temp.max)}° </p> 
+                  <p class="divider"> | </p>
+                  <p class="tempMin">${Math.round(forecastDay.temp.min)}° </p>
+                  </div>
            
                 `;
     }
