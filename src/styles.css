@@ -185,14 +185,6 @@ img.col-4 {
   background-color: #ec6e4b;
 }
 
-.weather-now,
-.weather-1,
-.weather-2,
-.weather-3,
-.weather-4 {
-  padding: 0px 10px 0;
-}
-
 .forecast-next-temp,
 .forecast-next-date,
 .image-icon {
